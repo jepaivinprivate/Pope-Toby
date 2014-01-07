@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Rotator : MonoBehaviour
 {
-	public float RotationSpeed = 1.0f;
+	public float RotationSpeed3D = 1.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -11,10 +11,14 @@ public class Rotator : MonoBehaviour
 	
 	}
 	
+	void UpdateDebugInfo()
+	{
+		Debug.Log("Rotation speed: " + RotationSpeed3D);
+	}
+	
 	// Update is called once per frame
 	void Update ()
 	{	
-		//this.transform.rotation *=  Quaternion.AngleAxis(RotationSpeed, Vector3.one);
-		this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime/1000.0f, this.transform.position.y, this.transform.position.z);
+		this.transform.rotation =  Quaternion.AngleAxis(RotationSpeed3D * Time.time, Vector3.one);
 	}
 }
