@@ -13,12 +13,15 @@ public class Rotator : MonoBehaviour
 	
 	void UpdateDebugInfo()
 	{
-		Debug.Log("Rotation speed: " + RotationSpeed3D);
+		bool logging = true;
+		
+		if (logging)
+			Debug.Log("Rotation speed: " + RotationSpeed3D + " DeltaTime: " + Time.timeDelta);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{	
-		this.transform.rotation =  Quaternion.AngleAxis(RotationSpeed3D * Time.time, Vector3.one);
+		this.transform.rotation =  Quaternion.AngleAxis(RotationSpeed3D * Time.time, Vector3.one) / (Time.timeDelta *13);
 	}
 }
