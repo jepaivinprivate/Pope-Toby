@@ -11,6 +11,7 @@ public class Rotator : MonoBehaviour
 	
 	}
 	
+
 	void UpdateDebugInfo()
 	{
 		bool logging = true;
