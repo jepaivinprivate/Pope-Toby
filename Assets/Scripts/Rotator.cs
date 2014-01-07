@@ -12,6 +12,7 @@ public class Rotator : MonoBehaviour
 	}
 	
 
+
 	void UpdateDebugInfo()
 	{
 		bool logging = true;
@@ -23,6 +24,7 @@ public class Rotator : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{	
+
 		this.transform.rotation =  Quaternion.AngleAxis(RotationSpeed3D * Time.time, Vector3.one) / (Time.timeDelta *13);
 	}
 }
