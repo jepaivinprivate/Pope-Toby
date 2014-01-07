@@ -14,6 +14,7 @@ public class Rotator : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{	
-		this.transform.rotation *=  Quaternion.AngleAxis(RotationSpeed, Vector3.one);
+		//this.transform.rotation *=  Quaternion.AngleAxis(RotationSpeed, Vector3.one);
+		this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime/1000.0f, this.transform.position.y, this.transform.position.z);
 	}
 }
